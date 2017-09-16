@@ -1,11 +1,11 @@
 /*
- * usermode/atmel_serial.c
+ * atmel_serial.c
  *
- * Copyright (C) 2016 by SWARCO Traffic Systems GmbH.
+ * Userspace tool to config Atmal USART specific serial modes
+ *
+ * Copyright (C) 2016 by SWARCO Traffic Systems GmbH
+ *                       Guido Classen <clagix@gmail.com>
  * All rights reserved.
- *
- * @author:     Guido Classen <guido.classen@swarco.de>
- * @descr:      Userspace tool to config Atmal USART specific serial modes
  *
  * This program can switch serial mode an all Atmal AT91xxx CPUs
  * with atmel_serial USART without special kernel support.
@@ -20,11 +20,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
- *  @par Modification History:
+ * Modification History:
  *     2016-01-08 gc: initial version (based on ccm2200_serial.c)
  */
 

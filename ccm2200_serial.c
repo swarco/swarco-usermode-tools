@@ -1,11 +1,11 @@
 /*
- * usermode/ccm2200_serial.c
+ * ccm2200_serial.c
+ *
+ * Userspace tool to config CCM2200 board specific serial modes
  *
  * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Guido Classen <clagix@gmail.com>
  * All rights reserved.
- *
- * @author:     Guido Classen <guido.classen@weiss-electronic.de>
- * @descr:      Userspace tool to config CCM2200 board specific serial modes
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version
@@ -17,11 +17,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
- *  @par Modification History:
+ * Modification History:
  *     2013-02-07 gc: added support for TIOCSRS485 and TIOCGRS485 ioctls
  *                    present in recent Linux kernels
  *     2011-07-20 gc: new naming for RS485 modes using upercase letters, 
@@ -42,7 +40,7 @@
 #include <linux/ioctl.h>
 
 /* this needs a include path to actual CCM2200 Linux kernel! */
-#include <linux/ccm2200_serial.h>
+#include "linux/ccm2200_serial.h"
 
 #if defined(TIOCSRS485) && defined(TIOCGRS485) && defined(SER_RS485_ENABLED) \
     && defined(SER_RS485_RTS_ON_SEND) && defined(SER_RS485_RTS_AFTER_SEND)   \

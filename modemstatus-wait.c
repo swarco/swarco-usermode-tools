@@ -1,26 +1,28 @@
-/*****************************************************************************/
-/**
- *  @file          modemstatus-wait.c
+/*
+ * modemstatus-wait.c
  *
- *                 wait until speficified modem status signal change or
- *                 serial port events occur
+ * Wait until speficified modem status signal change or serial port
+ * events occur
  *
+ * Copyright (C) 2010 by SWARCO Traffic Systems GmbH.
+ *                       Guido Classen <clagix@gmail.com>
+ * All rights reserved.
  *
- *  @par Program:
- *                 Weiss Linux Usermode
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 as published by the Free Software Foundation.
  *
- *  @version       0.1 (\$Revision$)
- *  @author        Guido Classen <br>
- *                 Weiss Electronic GmbH
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
+ * GNU General Public License for more details.
  *
- *  $LastChangedBy$
- *  $Date$
- *  $URL$
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
- *  @par Modification History:
- *     - 2010-03-08 gc: initial version
+ * Modification History:
+ *     2010-03-08 gc: initial version
  */
- /****************************************************************************/
 
 #include <stdlib.h>
 #include <stdio.h>

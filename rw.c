@@ -1,26 +1,27 @@
-/*****************************************************************************/
-/**
- *  @file          rw.c
+/*
+ * rw.c
  *
+ * Wrapper to mount root-fs readwrite or readonly
  *
- *                 Wrapper to mount root-fs readwrite  
+ * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Guido Classen <clagix@gmail.com>
+ * All rights reserved.
  *
- *  @par Program:  
- *                 Weiss Linux Usermode
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 as published by the Free Software Foundation.
  *
- *  @version       0.1 (\$Revision$)
- *  @author        Guido Classen <br>
- *                 Weiss Electronic GmbH
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
+ * GNU General Public License for more details.
  *
- *  $LastChangedBy$  
- *  $Date$
- *  $URL$
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
- *  @par Modification History:
- *     - 2010-04-07 gc: initial version
+ * Modification History:
+ *     2007-05-10 gc: initial version
  */
- /****************************************************************************/
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -127,7 +128,6 @@ int main(int argc, char *argv[])
 /*
  *Local Variables:
  * mode: c
- * compile-command: "arm-linux-uclibc-gcc -o rw rw.c"
  * c-style: linux
  * End:
  */

@@ -24,13 +24,13 @@
 #*
 #*****************************************************************************
 
-BASE_DIR = $(CURDIR)/..
-include	$(BASE_DIR)/version.mk
-include	$(BASE_DIR)/directories.mk
+# BASE_DIR = $(CURDIR)/..
+# include	$(BASE_DIR)/version.mk
+# include	$(BASE_DIR)/directories.mk
 
-CFLAGS		+=  -I$(KERNEL_PATH)/include
-LDFLAGS         += -lpthread -lutil
-
+MY_CFLAGS         = $(CFLAGS) -I.
+MY_LDFLAGS         = $(LDFLAGS) -lpthread -lutil
+CH_CONFIG_DIR      = $(TARGET_DIR)
 PROGRAMS = ccm2200_gpio_test ccm2200_watchdog ccm2200_serial forward rw \
 	   file_write_test wlogin led_blinkd modemstatus-wait \
 	   dcf77
@@ -48,13 +48,13 @@ install:
 
 #simple pattern rule to compile executables from just one source file!
 %:	%.c
-	$(CROSS_CC) -o$@ $(CFLAGS) $(LDFLAGS) $<
+	$(CROSS_CC) -o$@ $(MY_CFLAGS) $(MY_LDFLAGS) $<
 	$(CROSS_STRIP) $@
 
 #2016-04-01 gc: huaweiAktBbo is now replaced by usb_modeswitch which works for switch
 #               all devices ( huaweiAktBbo only works for Huawei E220, E230, E270, E870)
 # huaweiAktBbo:	huaweiAktBbo.c
-# 	$(CROSS_CC) -o$@ $(CFLAGS) $(LDFLAGS) $< -lusb
+# 	$(CROSS_CC) -o$@ $(MY_CFLAGS) $(MY_LDFLAGS) $< -lusb
 # 	$(CROSS_STRIP) $@
 
 

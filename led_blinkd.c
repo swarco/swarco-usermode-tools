@@ -1,37 +1,38 @@
-/*****************************************************************************/
-/**
- *  @file          led_blinkd.c
+/*
+ * led_blinkd.c
  *
- *                 daemon for led linux led blink,
- *                 blink times / codes can be send by shell_scripts using
- *                 a named pipe:
+ *   daemon to let LED blink with custom blink times or blink/flashing
+ *   intervals, so different codes can displayed on a single LED.
  *
- *                 echo 0 1000 100 100 100 >/tmp/led0 
+ *     echo 0 1000 100 100 100 >/tmp/led0 
  *
- *                 or:
- *                 echo 0 off >/tmp/led0 
- *                 echo 0 on >/tmp/led0 
- *               
- *                 first value is the led number (only 0 supported currently)
- *                 values are pairs of LED off time and LED on time in msec
+ *   or:
  *
+ *     echo 0 off >/tmp/led0 
+ *     echo 0 on >/tmp/led0 
+ * 
+ *   first value is the led number (only 0 supported currently)
+ *   values are pairs of LED off time and LED on time in msec
  *
- *  @par Program:  
- *                 Weiss Linux Usermode
+ * Copyright (C) 2010 by SWARCO Traffic Systems GmbH
+ *                       Guido Classen <clagix@gmail.com>
+ * All rights reserved.
  *
- *  @version       0.1 (\$Revision$)
- *  @author        Guido Classen <br>
- *                 Weiss Electronic GmbH
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 as published by the Free Software Foundation.
  *
- *  $LastChangedBy$  
- *  $Date$
- *  $URL$
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
+ * GNU General Public License for more details.
  *
- *  @par Modification History:
- *     - 2010-02-26 gc: initial version
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ *
+ * Modification History:
+ *     2010-02-26 gc: initial version
  */
- /****************************************************************************/
-
 
 #include <stdio.h>
 #include <stdlib.h>

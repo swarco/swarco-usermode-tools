@@ -1,8 +1,11 @@
 /*
-Programm compilieren		: 	cc dcf77.c -O6 -o dcf77
-
-Programm und Hardware testen	:	dcf77 -d3
-*/
+ * dcf77.c
+ *
+ * DCF77 Radio clock time receiver
+ *
+ * Source unknown. This file is under Public Domain License.
+ *
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

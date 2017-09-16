@@ -1,22 +1,28 @@
-/*****************************************************************************/
-/** 
- *  @file          wlogin.c
+/*
+ * wlogin.c
  *
- *                 
- *  @par Library:  
- *                 Common
+ * Userspace tool to config CCM2200 board specific serial modes
  *
- *  @version       0.0.7 (\$Revision$)
- *  @author        Markus Forster <br>
- *                 Weiss-Electronic GmbH
- *  
- *  $LastChangedBy$  
- *  $Date$
+ * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Markus Forster
+ * All rights reserved.
  *
- *  @par Modification History:
- *     - 2007-02-15 mf: Initial Version (Weiss Auto Logout)
- */  
- /****************************************************************************/
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ *
+ * Modification History:
+ *     2007-02-15 mf: Initial Version (Weiss Auto Logout)
+ */
+
 /* standard icludes */
 #include <stdio.h>
 #include <stdlib.h>

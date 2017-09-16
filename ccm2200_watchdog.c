@@ -1,28 +1,26 @@
 /*
- * usermode/ccm2200_watchdog.c
+ * ccm2200_watchdog.c
+ *
+ * Userspace tool to access CCM2200 watchdogs. This programm uses only
+ * Standard Linux features. So it can be applied to any watchdog
+ * device (Except setting LED-Mask)
+ *
+ * The CCM2200 board has two watchdog devices:
+ *   /dev/ccm2200_watchdog:
+ *     external MAX6751 watchdog on CCM2200 board.
+ *     This device is active all time (it can only be disabled
+ *     by DIP-Switch 4) and has a timeout of 64 seconds.
+ *     This reduce the timeout perio to 0.5
+ *     second by setting a timeout of 1 sec.
+ *   /dev/watchdog:
+ *     AT91RM9200 internal watchdog. This device can be used 
+ *     together with /dev/ccm2200_watchdog to get other timeout
+ *     periods. It's period time can be set also with this 
+ *     programm!
  *
  * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Guido Classen <clagix@gmail.com>
  * All rights reserved.
- *
- * @author:     Guido Classen <guido.classen@weiss-electronic.de>
- * @descr:      Userspace tool to access CCM2200 watchdogs.
- *              This programm uses only Standard Linux features. So it can
- *              be applied to any watchdog device (Except setting LED-Mask)
- *              The CCM2200 board has two watchdog devices:
- *                /dev/ccm2200_watchdog:
- *                  external MAX6751 watchdog on CCM2200 board.
- *                  This device is active all time (it can only be disabled
- *                  by DIP-Switch 4) and has a timeout of 64 seconds.
- *                  This reduce the timeout perio to 0.5
- *                  second by setting a timeout of 1 sec.
- *                /dev/watchdog:
- *                  AT91RM9200 internal watchdog. This device can be used 
- *                  together with /dev/ccm2200_watchdog to get other timeout
- *                  periods. It's period time can be set also with this 
- *                  programm! 
- *
- * See file CREDITS for list of people who contributed to this
- * project.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version
@@ -34,9 +32,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
  *  @par Modification History:
  *     2007-02-05 gc: initial version
@@ -54,7 +50,7 @@
 #include <linux/watchdog.h>
 
 /* this needs a include path to actual CCM2200 Linux kernel! */
-#include <linux/ccm2200_gpio.h>
+#include "linux/ccm2200_gpio.h"
 
 
 void usage(void)
@@ -132,7 +128,6 @@ int main(int argc, char *argv[])
 /*
  *Local Variables:
  * mode: c
- * compile-command: "make ccm2200_watchdog"
  * c-style: linux
  * End:
  */

@@ -1,12 +1,12 @@
 /*
- * usermode/ccm2200_gpio_test.c
+ * ccm2200_gpio_test.c
+ *
+ * Userspace tool to access CCM2200 digital in-/output lines and
+ * indicator LEDs
  *
  * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Guido Classen <clagix@gmail.com>
  * All rights reserved.
- *
- * @author:     Guido Classen <guido.classen@weiss-electronic.de>
- * @descr:      Userspace tool to access CCM2200 digital in-/output lines
- *              and indicator LEDs
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License version
@@ -18,11 +18,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
- * MA 02111-1307 USA
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
- *  @par Modification History:
+ * Modification History:
  *     2011-01-20 gc: support for read back output and leds
  *     2007-05-08 gc: support for continuous option
  *     2007-02-05 gc: initial version

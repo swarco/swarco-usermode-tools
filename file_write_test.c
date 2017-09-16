@@ -1,26 +1,28 @@
-/*****************************************************************************/
-/**
- *  @file          file_write_test.c
+/*
+ * file_write_test.c
  *
- *                 Test reliability of filesystem and block device
- *                 (mostly NAND-Flash) using continuouesly write access
- *                 to a temporary file
+ * Test reliability of filesystem and block device (mostly NAND-Flash)
+ * using continuouesly write access to a temporary file
  *
- *  @par Program:  
- *                 Weiss Linux Usermode
+ * Copyright (C) 2007 by Weiss-Electronic GmbH.
+ *                       Guido Classen <clagix@gmail.com>
+ * All rights reserved.
  *
- *  @version       0.1 (\$Revision$)
- *  @author        Guido Classen <br>
- *                 Weiss Electronic GmbH
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 as published by the Free Software Foundation.
  *
- *  $LastChangedBy$  
- *  $Date$
- *  $URL$
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
+ * GNU General Public License for more details.
  *
- *  @par Modification History:
- *     - 2007-05-22 gc: initial version
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ *
+ * Modification History:
+ *     2007-05-22 gc: initial version
  */
- /****************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
