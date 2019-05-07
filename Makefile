@@ -24,26 +24,22 @@
 #*
 #*****************************************************************************
 
-# BASE_DIR = $(CURDIR)/..
-# include	$(BASE_DIR)/version.mk
-# include	$(BASE_DIR)/directories.mk
+MY_CFLAGS       = $(CFLAGS) -I.
+MY_LDFLAGS	= $(LDFLAGS) -lpthread -lutil
 
-MY_CFLAGS         = $(CFLAGS) -I.
-MY_LDFLAGS         = $(LDFLAGS) -lpthread -lutil
-CH_CONFIG_DIR      = $(TARGET_DIR)
 PROGRAMS = ccm2200_gpio_test ccm2200_watchdog ccm2200_serial forward rw \
 	   file_write_test wlogin led_blinkd modemstatus-wait \
 	   dcf77
 
 .PHONY: all
-all: $(PROGRAMS) install
+all: install
 
 
 .PHONY: install
-install:
-	cp -a $(PROGRAMS) $(CH_CONFIG_DIR)/usr/bin
-	-test -e $(CH_CONFIG_DIR)/usr/bin/ro && rm $(CH_CONFIG_DIR)/usr/bin/ro
-	ln -s rw $(CH_CONFIG_DIR)/usr/bin/ro 
+install: $(PROGRAMS)
+	cp -a $(PROGRAMS) $(TARGET_DIR)/usr/bin
+	-test -e $(TARGET_DIR)/usr/bin/ro && rm $(TARGET_DIR)/usr/bin/ro
+	ln -s rw $(TARGET_DIR)/usr/bin/ro 
 
 
 #simple pattern rule to compile executables from just one source file!
