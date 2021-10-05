@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# This script logs SHA256 protected logins at a given location
+
+LOGFILE=/etc/ssh/auth.log
+
+# Check for ro/rw filesystem swarco linux v3
+rw
+
+if [ ! -f "$LOGFILE" ]; then
+        touch $LOGFILE
+fi
+
+grep -oE '\w{3}\s[0-9]{1,2}\s[0-9]{1,2}\:[0-9]{1,2}\:[0-9]{1,2}.+Accepted\skey\sED25519.+' /var/log/messages | tail -1 >> $LOGFILE
+
+# Reenable ro/rw filesystem
+ro
