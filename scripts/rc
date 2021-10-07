@@ -11,7 +11,7 @@ if [ ! -f "$LOGFILE" ]; then
         touch $LOGFILE
 fi
 
-grep -oE '\w{3}\s[0-9]{1,2}\s[0-9]{1,2}\:[0-9]{1,2}\:[0-9]{1,2}.+Accepted\skey\sED25519.+' /var/log/messages | tail -1 >> $LOGFILE
+grep -oE '\w{3}\s+[0-9]{1,2}\s+[0-9]{1,2}\:[0-9]{1,2}\:[0-9]{1,2}.+Accepted.+key.+ED25519.+' /var/log/messages | tail -1 >> $LOGFILE
 
 # Reenable ro/rw filesystem
 ro
