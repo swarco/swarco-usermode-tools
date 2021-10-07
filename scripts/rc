@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 # This script logs SHA256 protected logins at a given location
 
 LOGFILE=/etc/ssh/auth.log
