@@ -18,8 +18,11 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/timex.h>
+#include <errno.h>
+
 
 #define inb(port) 0               /* we use only serial communication */
+#define ioperm(from, num, turn_on) EIO
 
 //#define KC(a,b,c) (a<<16|b<<8|c)
 
@@ -314,7 +317,7 @@ void dcf_auswert(struct timeval *unixt, int *bit)
 void dcf_delta(struct timeval *t1, int bit)
 {
 	static int bits[61];
-	static bitno = -1;
+	static int bitno = -1;
         static int initialized = 0;
 	static struct timeval t2;
 	struct timeval td;
