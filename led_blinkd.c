@@ -36,6 +36,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -179,7 +182,7 @@ int main(int argc, char **argv)
       }
       if (count > 1) {
         delay_entries = count-1;
-        delay_times = malloc(delay_entries * sizeof(unsigned));
+        delay_times = (unsigned*)malloc(delay_entries * sizeof(unsigned));
         endp = buf;
         count = 0;
         while (endp < buf+n) {

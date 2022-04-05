@@ -43,6 +43,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
+#include <string.h>
+#include <stdlib.h>
 
 /* linux includes */
 #include <linux/types.h>
