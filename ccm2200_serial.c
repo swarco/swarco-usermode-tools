@@ -49,7 +49,6 @@
 #define HAVE_RS485_IOCTL
 #endif
 
-#ifdef CCM2200_SERIAL_MODE_NORMAL
 
 void usage(void)
 {
@@ -296,13 +295,6 @@ cleanup:
   return result;
 }
 
-#else /* not CCM2200 platform */
-int main(void)
-{
-  printf("platform not supported\n");
-}
-
-#endif 
 
 /*
  *Local Variables:
