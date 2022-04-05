@@ -26,6 +26,12 @@
 
 MY_CFLAGS       = $(CFLAGS) -I.
 MY_LDFLAGS	= $(LDFLAGS) -lpthread -lutil
+ifeq ($(CROSS_CC),)
+CROSS_CC = gcc
+endif
+ifeq ($(CROSS_STRIP),)
+CROSS_STRIP = strip
+endif
 
 PROGRAMS = ccm2200_gpio_test ccm2200_watchdog ccm2200_serial forward rw \
 	   file_write_test wlogin led_blinkd modemstatus-wait \
